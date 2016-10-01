@@ -1,0 +1,129 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/start_page">DataBASE</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><%= link_to 'Курсовые работы', articles_path %></li>
+                    <li><%= link_to 'Студенты', students_path %></li>
+                    <li><%= link_to 'Преподаватели', teachers_path %></li>
+                    <li><%= link_to 'Статистика', statistics_path %></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+</nav>
+ <div class="container">
+  <h1>Новая курсовая</h1>
+<%= form_for :article, url: articles_path do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved: 
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <%end  %>
+  <div class="form-group">
+    <label for="article_student_id" class="col-sm-2 control-label">ФИО:</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="article[student_id]" id="article_student_id">
+        <% Student.all.each do |student| %>
+	        <option value="<%= student.id %>"><%= student.fio %></option>
+        <% end %>
+      </select>
+    </div>
+  </div><br>
+  <!--<div class="form-group">
+    <label for="article_fio" class="col-sm-2 control-label">ФИО:</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[fio]" id="article_fio" class="form-control" required>
+    </div>
+  </div>
+<br>
+  <div class="form-group">
+    <label for="article_group" class="col-sm-2 control-label">Группа:</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[group]" id="article_group" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="article_tnumber" class="col-sm-2 control-label">Телефон:</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[tnumber]" id="article_tnumber" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="article_email" class="col-sm-2 control-label">e-mail</label>
+    <div class="col-sm-10">
+      <input type="e-mail" name="article[email]" id="article_email" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="article_sn" class="col-sm-2 control-label">Соц. сеть</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[sn]" id="article_sn" class="form-control" required>
+    </div>
+  </div><br>-->
+  <div class="form-group">
+    <label for="article_typework" class="col-sm-2 control-label">Тип работы:</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="article[typework]" id="article_typework">
+	<option value="Курсовая работа">Курсовая работа</option>
+	<option value="Курсовой проект">Курсовой проект</option>
+      </select>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="article_year" class="col-sm-2 control-label">Год:</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[year]" id="article_year" class="form-control" required>
+    </div>
+  </div><br>
+  <!--<div class="form-group">
+    <label for="article_teacher" class="col-sm-2 control-label">Преподаватель:</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[teacher]" id="article_teacher" class="form-control" required>
+    </div>
+  </div><br>-->
+  <div class="form-group">
+    <label for="article_workname" class="col-sm-2 control-label">Название работы:</label>
+    <div class="col-sm-10">
+      <input type="text" name="article[workname]" id="article_workname" class="form-control" required>
+    </div>
+  </div><br>
+  <br>
+  <div class="form-group">
+    <label for="article_mark" class="col-sm-2 control-label">Оценка:</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="article[mark]" id="article_mark">
+        <option value="5">Отлично "5"</option>
+        <option value="4">Хорошо "4"</option>
+        <option value="3">Удовлетворительно "3"</option>
+        <option value="2">Неудовлетворительно "2"</option>
+      </select>
+    </div>
+  </div><br>
+ 
+ <%= f.file_field :linktowork %><br>
+  <div class="form-group">
+	<input type="submit" name="commit" value="Save Article" class="form-control btn-success">
+  </div>
+
+
+
+<% end %>
+
+<%= link_to 'Вернуться к базе', articles_path %>
+</div>

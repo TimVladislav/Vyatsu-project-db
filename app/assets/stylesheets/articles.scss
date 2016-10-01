@@ -1,0 +1,13 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-group {
+  padding-top: 10px !important;
+}
+#articleTable_filter>label {
+  float: right;
+  margin-right:100px;
+}
+#articleTable_length>label {
+  margin-left: 100px;
+}

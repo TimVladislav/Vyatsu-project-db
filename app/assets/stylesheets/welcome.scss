@@ -1,0 +1,24 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html,
+body {
+  height:100%;
+  width:100%;
+}
+.back {
+  height:100%;
+  background-image:url(/images/bg_first_page.jpg);
+  background-size:cover;
+}
+.center {
+  top: -100px;
+  position:relative;
+  width:100%;
+  text-align:center;
+  color: white;
+}
+.pad {
+  height:50%;
+  width:0px;
+}

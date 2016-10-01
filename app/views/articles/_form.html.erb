@@ -1,0 +1,60 @@
+<%= form_for @article do |f| %>
+ 
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <p>
+  <strong>ФИО:</strong>
+  <%= @article.fio %>
+ </p>
+ <p>
+  <strong>Группа:</strong>
+  <%= @article.group%>
+ </p>
+ <p>
+  <strong>Тел.:</strong>
+  <%= @article.tnumber %>
+ </p>
+ <p>
+  <strong>e-mail:</strong>
+  <%= @article.email %>
+ </p>
+ <p>
+  <strong>Соц. сеть:</strong>
+  <%= @article.sn %>
+ </p>
+ <p>
+  <strong>Тип работы:</strong>
+  <%= @article.typework %>
+ </p>
+ <p>
+  <strong>Год:</strong>
+  <%= @article.year %>
+ </p>
+ <p>
+  <strong>Преподаватель:</strong>
+  <%= @article.teacher %>
+ </p>
+ <p>
+  <strong>Название работы:</strong>
+  <%= @article.workname %>
+ </p>
+ <p>
+  <strong>Ссылка на работу:</strong>
+  <%= @article.linktowork%>
+ </p> 
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

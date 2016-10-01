@@ -1,0 +1,269 @@
+                                                                                            Course Outline
+
+
+
+
+School of Computing and Academic Studies
+
+Program: Computer Systems Technology                                                           COMP 7005
+Option: Bachelor of Technology, Computer Systems                 Computer Networks and Protocols
+
+
+
+Start Date:   September 3, 2014                         End Date:     December 5, 2014
+
+
+Total Hours:         Total Weeks:                       Term/Level:         Course Credits:
+
+Hours/Week:   3.75   Lecture:        1.25 Lab:     2.5
+
+Prerequisites                                           COMP 7005 is a Prerequisite for:
+
+Course No.   Course Name                                Comp 8005     Data Communication Applications
+ Diploma of Technology in Computer Systems (or
+
+equivalent) or permission of instructor and program head.
+
+
+   Course Description
+
+This course will cover the advanced elements of Data Communication and Network Architecture. The TCP/IP protocol suite
+and its application within the Internet architecture will be examined in depth, and in a practical manner. Also covered will be
+
+advanced topics such as Wireless Data Communication, and Security Protocols, and Cryptology. Students will be introduced to
+the Berkeley socket API, and the basics of Client/Server programming will be introduced.
+
+
+
+   Evaluation
+
+     Final Examination                   30%        Comments:
+     Midterm                             20%
+     Assignments                         20%
+     Final Project                       30%
+
+     TOTAL                              100%
+
+
+
+   Course Learning Outcomes/Competencies
+
+Upon successful completion, the student will:
+
+1.  Have an in-depth understanding of Data Communication protocols with an emphasis on practical applications.
+2.   Understand and analyze Peer-to-Peer protocols, Routing algorithms, and Network congestion issues.
+
+3.   Have a detailed understanding of the TCP/IP protocol suite and analyze the various components of the protocol suite in a
+     practical manner.
+4.  Use the TCP/IP socket API to design and implement basic Client/Server applications.
+5.  Have a detailed understanding of Wireless and Mobile networks.
+
+6.  Understand the basics of Network Security be able to analyze and evaluate security protocols for potential use within an
+    organization.
+7.  Acquire a solid foundation for pursuing more advanced courses such as COMP 8005 and COMP 8505.   Verification
+
+I verify that the content of this course outline is current.
+
+Aman Abdulla                                                  July 28, 2014
+
+
+                   Authoring Instructor                                             Date
+
+I verify that this course outline has been reviewed.
+
+
+
+              Program Head/Chief Instructor                                         Date
+
+
+I verify that this course outline complies with BCIT policy.
+
+
+                  Dean/Associate Dean                                               Date
+
+
+
+Note: Should changes be required to the content of this course outline, students will be given reasonable notice.   Instructor(s)
+
+Aman Abdulla                   Office Location:  SW2-323             Office Phone:     604-432-8837
+                               Office Hrs.:                          E-mail Address:   aabdulla@milliways.bcit.ca
+
+
+
+   Learning Resources
+
+Required:
+
+
+Computer Networking − 6th Edition
+A Top-Down Approach
+Kurose & Ross
+
+Addison-Wesley
+
+Recommended:
+
+                                      th
+Data and Computer Communications – 9 Edition
+William Stallings
+Prentice-Hall
+
+
+
+   The Information for Students
+
+
+
+Assignments: Late assignments, lab reports or projects will not be accepted for marking. Assignments must be done on an
+individual basis unless otherwise specified by the instructor.
+
+Makeup Tests, Exams or Quizzes: There will be no makeup tests, exams or quizzes. If you miss a test, exam or quiz, you will
+receive zero marks. Exceptions may be made for documented medical reasons or extenuating circumstances. In such a case, it
+is the responsibility of the student to inform the instructor immediately.
+
+Ethics: BCIT assumes that all students attending the Institute will follow a high standard of ethics. Incidents of cheating or
+plagiarism may, therefore, result in a grade of zero for the assignment, quiz, test, exam, or project for all parties involved
+and/or expulsion from the course.
+
+Attendance: The attendance policy as outlined in the current BCIT Calendar will be enforced.
+
+The following statements are in accordance with the BCIT Policies 5101, 5102, 5103, and 5104, and their accompanying
+
+procedures. To review these policies and procedures, please refer to: www.bcit.ca/about/administration/policies.shtml
+
+Attendance/Illness:
+In case of illness or other unavoidable cause of absence, the student must communicate as soon as possible with his/her
+
+instructor or Program Head or Chief Instructor, indicating the reason for th e absence. Prolonged illness of three or more
+consecutive days must have a BCIT medical certificate sent to the department. Excessive absence may result in failure or
+immediate withdrawal from the course or program. Please see Policy 5101 — Student Regulations, and accompanying
+procedures: http://www.bcit.ca/files/pdf/policies/5101.pdf
+
+
+Academic Misconduct:
+Violations of academic integrity, including dishonesty in assignments, examinations, or other academic performances are
+prohibited and will be handled in accordance with Policy 5104 — Academic Integrity and Appeals, and accompanying
+
+procedures: http://www.bcit.ca/files/pdf/policies/5104.pdf
+
+Attempts:
+Students must successfully complete a course within a maximum of three attempts at the course. Students with two attempts in
+
+a single course will be allowed to repeat the course only upon special written permission from the Associate Dean. Students
+who have not successfully completed a course within three attempts will not be eligible to graduate from their respective
+program.Accommodation:
+Any student who may require accommodation from BCIT because of a physical or mental disability should refer to BCIT’s
+
+Policy on Accommodation for Students with Disabilities (Policy #4501), and contact BCIT’s Disability Resource Centre
+(SW1-2300, 604-451-6963) at the earliest possible time. Requests for accommodation must be made to the Disability Resource
+Centre, and should not be made to a course instructor or Program area.
+
+
+Any student who needs special assistance in the event of a medical emergency or building evacuation (either because of a
+disability or for any other reason) should also promptly inform their course instructor(s) and the Disability Resource Centre of
+their personal circumstances.
+
+
+
+
+
+ Assignment Details
+
+Will be provided in class.                                                 Schedule
+
+
+Topic Number                          Outcome/Material Covered
+
+
+       1         Computer Networks and the Internet:                                    Chapter 1
+                 •    Components of a computer network
+                 •    Network core
+                 •    Access Networks and Physical Media
+
+                 •    ISPs and Internet backbones
+                 •    Delay and Loss in Packet-Switched networks
+                 •    Layered Architectures and Service Models
+
+
+       2         Application Layer:                                                     Chapter 2,
+                 •   Principles of Network Applications                                 Notes and code
+                 •    Web and HTTP                                                      examples
+
+                 •    SMTP (E-mail)
+                 •    DNS
+                 •    P2P File Sharing
+                 •    Socket Programming API (TCP & UDP)
+
+
+       3         Transport Layer:                                                       Chapter 3
+                 •    Introduction to Transport Layer Services
+                 •    Multiplexing and Demultiplexing
+                 •    Connectionless Transport: UDP
+
+                 •    Principles of Reliable Data Transfer
+                 •    Connection-Oriented Transport: TCP
+                 •    Principles of Congestion Control
+
+                 •    TCP Congestion Control
+
+       4         Network Layer:                                                         Chapter 4
+                 •    Forwarding and Routing
+                 •    Virtual Circuit and Datagram Networks
+
+                 •    Router Architecture
+                 •    IP: Forwarding and Addressing in the Internet
+                 •    Routing Algorithms
+
+                 •    Routing in the Internet
+                 •    Broadcast and Multicast Routing
+
+       5         Link Layer and LANs:                                                   Chapter 5
+                 •    Multiple Access Protocols
+
+                 •    Link Layer Switches
+                 •    VLANs
+                 •    Link Virtualization
+
+
+       6         RF Principles                                                          Course notes
+                 •   RF wave propagation RF Propagation Models
+                 •   Antenna types
+                 •   Link Budget Calculations  Topic Number                          Outcome/Material Covered
+
+        7          Wireless Networks – IEEE 802.11:                                        Notes & Chapter 6
+
+                   •   Wi-Fi: 802.11 wireless LANs
+                   •   802.11 Medium Access Control
+                   •    802.11 Frame Types
+
+
+
+
+
+
+
+        8          Wireless and Mobile Networks:                                           Notes & Chapter 6
+                   •   Wireless Links and Network Characteristics
+                   •   Wi-Fi: 802.11 wireless LANs
+                   •   Cellular internet access
+
+                   •    Mobility management
+                   •    Mobile IP
+                   •    Managing mobility in cellular networks
+
+                   •    Bluetooth Technology
+
+        9          Security and Cryptography:                                              Chapter 8,
+                   •    Security Protocols                                                 Course notes &
+                   •    Cryptographic Algorithms
+                                                                                           code examples
+                   •    Authentication & Integrity
+                   •    Key Distribution and Certificates
+
+
+*Topics may be omitted, replaced or added at the discretion of the instructor.
+
+
+•    Notes will be posted on my Web server which you may access using the following URL:
+
+          http://milliways.bcit.ca/c7005/

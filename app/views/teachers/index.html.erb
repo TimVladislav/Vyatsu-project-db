@@ -1,0 +1,60 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/start_page">DataBASE</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><%= link_to 'Курсовые работы', articles_path %></li>
+                    <li><%= link_to 'Студенты', students_path %></li>
+                    <li class="active"><%= link_to 'Преподаватели', teachers_path %></li>
+                    <li><%= link_to 'Статистика', statistics_path %></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+</nav>
+<h1>Преподаватели</h1>
+<br>
+<table id="teacherTable" class="table table-striped table-bordered tablesorter responsive">
+  <thead>
+  <tr>
+    <th>ФИО</th>
+    <th>Дата рождения</th>
+    <th>Тел.</th>
+    <th>e-mail</th>
+    <th>Должность</th>
+    <th><%= link_to 'Add', new_teacher_path %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @teachers.each do |teacher|%>
+    <tr>
+      <td><%= teacher.fio %></td>
+      <td><%= teacher.birthday %></td>
+      <td><%= teacher.tnumber %></td>
+      <td><%= teacher.email %></td>
+      <td><%= teacher.post %></td>
+      
+      <td>
+        <%= link_to 'Show', teacher_path(teacher) %>
+        <%= link_to 'Edit', edit_teacher_path(teacher) %>
+        <%= link_to 'Delete', teacher_path(teacher), method: :delete, data: {confirm: 'Вы уверены, что хотите удалить строку?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    //$("#articleTable").tablesorter({sortList: [[0,0],[1,0]]});
+    $("#teacherTable").dataTable();
+  });
+</script>

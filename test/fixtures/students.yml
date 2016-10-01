@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fio: MyString
+  group: MyString
+  date_work: 2016-09-16
+  subject: MyString
+  teacher: MyString
+  email: MyString
+  article_id: 
+
+two:
+  fio: MyString
+  group: MyString
+  date_work: 2016-09-16
+  subject: MyString
+  teacher: MyString
+  email: MyString
+  article_id: 

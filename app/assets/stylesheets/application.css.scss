@@ -1,0 +1,16 @@
+/*
+*= require jquery-tablesorter/theme.bootstrap
+*= require dataTables/extras/dataTables.responsive
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "welcome.scss";
+@import "articles.scss";
+@import "students.scss";
+@import "teachers.scss";
+@import "dataTables/extras/dataTables.responsive";
+@import "start_page.scss";
+
+h1{
+  margin-top: 60px;
+}

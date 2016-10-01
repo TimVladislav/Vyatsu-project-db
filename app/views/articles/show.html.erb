@@ -1,0 +1,87 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/start_page">DataBASE</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><%= link_to 'Курсовые работы', articles_path %></li>
+                    <li><%= link_to 'Студенты', students_path %></li>
+                    <li><%= link_to 'Преподаватели', teachers_path %></li>
+                    <li><%= link_to 'Статистика', statistics_path %></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+</nav>
+<br>
+<div class="container">
+  <h1>Информация о курсовой</h1>
+  <dl class="dl-horizontal">
+    <dt>ФИО:</dt>
+    <dd><%= Student.find_by_id(@article.student_id).fio %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Группа:</dt>
+    <dd><%= Student.find_by_id(@article.student_id).group%></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Телефон:</dt>
+    <dd><%= Student.find_by_id(@article.student_id).tnumber %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>e-mail:</dt>
+    <dd><%= Student.find_by_id(@article.student_id).email %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>vk.com/id</dt>
+    <dd><%= Student.find_by_id(@article.student_id).sn %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Тип работы:</dt>
+    <dd><%= @article.typework %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Год:</dt>
+    <dd><%= @article.year %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Преподаватель:</dt>
+    <dd><%= Student.find_by_id(@article.student_id).teacher %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Название работы:</dt>
+    <dd><%= @article.workname %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Оценка</dt>
+    <dd><%= @article.mark %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Ссылка на работу:</dt>
+    <dd>
+      <% if @ext == ".docx" || @ext == ".txt" || @ext == ".pdf" || @ext == ".rtf" %>
+        <a href="<%= @article.linktowork.to_s[0..@article.linktowork.to_s.rindex(".")] + 'docx' %>" download> .docx </a>
+        <a href="<%= @article.linktowork.to_s[0..@article.linktowork.to_s.rindex(".")] + 'pdf' %>" download> .pdf </a>
+        <a href="<%= @article.linktowork.to_s[0..@article.linktowork.to_s.rindex(".")] + 'txt' %>" download> .txt </a>
+        <a href="<%= @article.linktowork.to_s[0..@article.linktowork.to_s.rindex(".")] + 'rtf' %>" download> .rtf </a>
+      <% else %>
+        <a href="<%= @article.linktowork %>" download> Скачать оригинал </a>
+      <% end %>
+    </dd>
+  </dl>
+<%= link_to 'Вернуться к базе данных', articles_path %>
+</div>
+<br>
+<div class="container"> 
+  <p>Предпросмотр документа: <%= @article.linktowork.to_s[@article.linktowork.to_s.rindex("/") + 1..-1] %></p>
+  <pre>
+  <%=render html: @doc.html_safe %></div>
+  </pre>
+</div>

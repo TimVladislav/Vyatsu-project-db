@@ -1,0 +1,100 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/start_page">DataBASE</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><%= link_to 'Курсовые работы', articles_path %></li>
+                    <li class="active"><%= link_to 'Студенты', students_path %></li>
+                    <li><%= link_to 'Преподаватели', teachers_path %></li>
+                    <li><%= link_to 'Статистика', statistics_path %></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+</nav>
+ <div class="container">
+  <h1>Новый студент</h1>
+<%= form_for :student, url: students_path do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved: 
+      </h2>
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <%end  %>
+  <div class="form-group">
+    <label for="student_fio" class="col-sm-2 control-label">ФИО:</label>
+    <div class="col-sm-10">
+      <input type="text" name="student[fio]" id="student_fio" class="form-control" required>
+    </div>
+  </div>
+<br>
+  <div class="form-group">
+    <label for="student_group" class="col-sm-2 control-label">Группа:</label>
+    <div class="col-sm-10">
+      <input type="text" name="student[group]" id="student_group" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="student_tnumber" class="col-sm-2 control-label">Телефон:</label>
+    <div class="col-sm-10">
+      <input type="text" name="student[tnumber]" id="student_tnumber" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="student_email" class="col-sm-2 control-label">e-mail</label>
+    <div class="col-sm-10">
+      <input type="e-mail" name="student[email]" id="student_email" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="student_sn" class="col-sm-2 control-label">vk.com/id</label>
+    <div class="col-sm-10">
+      <input type="text" name="student[sn]" id="student_sn" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="student_date_work" class="col-sm-2 control-label">Назначенная дата сдачи:</label>
+    <div class="col-sm-10">
+      <input type="text" name="student[date_work]" id="studetn_date_work" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="student_subject" class="col-sm-2 control-label">Предмет:</label>
+    <div class="col-sm-10">
+      <input type="text" name="student[subject]" id="student_subject" class="form-control" required>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="student_teacher" class="col-sm-2 control-label">Преподаватель:</label>
+    <div class="col-sm-10">
+        <select style="margin-bottom: 100px;" class="form-control" name="article[student_id]" id="article_student_id">
+        <% Teacher.all.each do |teacher| %>
+	        <option value="<%= teacher.id %>"><%= teacher.fio %></option>
+        <% end %>
+    </div>
+  </div><br><br>
+  <br>
+  <div class="form-group">
+	<input type="submit" name="commit" value="Save student" class="form-control btn-success">
+  </div>
+
+
+
+<% end %>
+
+<%= link_to 'Вернуться к базе', students_path %>
+</div>

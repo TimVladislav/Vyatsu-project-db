@@ -1,0 +1,71 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/start_page">DataBASE</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><%= link_to 'Курсовые работы', articles_path %></li>
+                    <li><%= link_to 'Студенты', students_path %></li>
+                    <li><%= link_to 'Преподаватели', teachers_path %></li>
+                    <li><%= link_to 'Статистика', statistics_path %></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+</nav>
+<h1>Курсовые работы</h1>
+<br>
+<table id="articleTable" class="table table-striped table-bordered tablesorter responsive">
+  <thead>
+  <tr>
+    <th>ФИО</th>
+    <th>Группа</th>
+    <th>Тел.</th>
+    <th>e-mail</th>
+    <th>Соц. сеть</th>
+    <th>Тип работы</th>
+    <th>Год</th>
+    <th>Преподаватель</th>
+    <th>Название работы</th>
+    <th>Оценка</th>
+    <th>Ссылка на работу</th>
+    <th><%= link_to 'Add', new_article_path %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |article|%>
+    <tr>
+      <td><%= Student.find_by_id(article.student_id).fio %></td>
+      <td><%= Student.find_by_id(article.student_id).group %></td>
+      <td><%= Student.find_by_id(article.student_id).tnumber %></td>
+      <td><%= Student.find_by_id(article.student_id).email %></td>
+      <td><%= Student.find_by_id(article.student_id).sn %></td>
+      <td><%= article.typework %></td>
+      <td><%= article.year %></td>
+      <td><%= Student.find_by_id(article.student_id).teacher %></td>
+      <td><%= article.workname %></td>
+      <td><%= article.mark %></td>
+      <td><a href="<%= article.linktowork %>">Скачать</a></td>
+      <td>
+        <%= link_to 'Show', article_path(article) %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Вы уверены, что хотите удалить строку?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    //$("#articleTable").tablesorter({sortList: [[0,0],[1,0]]});
+    $("#articleTable").dataTable();
+  });
+</script>

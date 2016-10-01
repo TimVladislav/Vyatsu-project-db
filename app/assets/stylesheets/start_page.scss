@@ -1,0 +1,18 @@
+.point {
+  height: 200px;
+  text-align: center;
+  &:link {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: #bbb;
+  }
+  .title {
+    margin-top: 30px;
+    font-size: 36px;
+    color: #333;
+    text-shadow: 2px 2px 4px #555;
+    text-decoration: none;
+  }
+
+}

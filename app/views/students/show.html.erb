@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/start_page">DataBASE</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><%= link_to 'Курсовые работы', articles_path %></li>
+                    <li class="active"><%= link_to 'Студенты', students_path %></li>
+                    <li><%= link_to 'Преподаватели', teachers_path %></li>
+                    <li><%= link_to 'Статистика', statistics_path %></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+</nav>
+<br>
+<div class="container">
+  <h1>Информация о студенте</h1>
+  <dl class="dl-horizontal">
+    <dt>ФИО:</dt>
+    <dd><%= @student.fio %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Группа:</dt>
+    <dd><%= @student.group%></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>e-mail:</dt>
+    <dd><%= @student.email %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Преподаватель:</dt>
+    <dd><%= @student.teacher %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Предмет:</dt>
+    <dd><%= @student.subject %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Дата сдачи:</dt>
+    <dd><%= @student.date_work%></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>vk.com/id</dt>
+    <dd><%= @student.sn %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Телефон:</dt>
+    <dd><%= @student.tnumber %></dd>
+  </dl>
+
+<%= link_to 'Вернуться к базе данных', students_path %>
+<a href="https://api.vk.com/method/<%=@method%>?<%=@params%>&<%=@token%>" class="btn btn-primary" style="margin-left: 25px;">Отправить напоминание VK</a>
+
+</div>
+<br>
