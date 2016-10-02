@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :teachers
   resources :statistics, only: [:index]
   resources :start_page, only: [:index]
-  root 'welcome#index'
+  root 'start_page#index'
   if Rails.env.production?
     get '404', :to => 'application#page_not_found'
   end

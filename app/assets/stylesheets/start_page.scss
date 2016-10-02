@@ -1,18 +1,48 @@
+html,
+body,
+.container-fluid {
+    height: 100%;
+    padding: 0;
+}
+.container-fluid {
+    background-color: #000222 !important;
+}
 .point {
-  height: 200px;
+    position: relative;
+  height: 100%;
   text-align: center;
   &:link {
     text-decoration: none;
   }
   &:hover {
-    background-color: #bbb;
+    background: linear-gradient(135deg, #5100a8 0%,#ff0084 100%);
   }
   .title {
+      position: relative;
+      top: -200px;
+      font-family: 'Cuprum', sans-serif;
     margin-top: 30px;
     font-size: 36px;
-    color: #333;
-    text-shadow: 2px 2px 4px #555;
+    color: white;
     text-decoration: none;
   }
+    .des {
+        position: relative;
+        color: white;
+        font-family: 'Lobster', cursive;
+        font-size: 18px;
+    }
+    .clearfix {
+        height: 50%;
+    }
+    .line {
+        width: 40%;
+        border-bottom: solid 2px #333;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        top: -100px;
+        border-color: #ff0084;
+    }
 
 }

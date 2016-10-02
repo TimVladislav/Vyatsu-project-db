@@ -18,6 +18,13 @@
                 </ul>
             </div>
             <!--/.nav-collapse -->
+            
         </div>
+       
 </nav><br><br><br>
-<%= bar_chart Article.group(:mark).sum(Article.all.count/@maxind) %>
+ <div class="container">
+           <h1>Количество оценок за курсовые:</h1><br>
+            <div class="col-sm-6"><%= column_chart Article.group(:mark).sum(Article.all.count/@maxind) %></div>
+            <div class="col-sm-6"><%= pie_chart Article.group(:mark).count %></div>
+        </div>
+
