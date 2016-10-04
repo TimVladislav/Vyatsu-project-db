@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'guidelines/index'
+
   get 'welcome/index'
   resources :articles
   resources :students

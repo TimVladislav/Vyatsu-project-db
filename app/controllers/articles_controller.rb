@@ -1,10 +1,13 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "229250", except: [:show]
+  
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
+
   def index
     @articles = Article.all
   end
   def show
-    @article = Article.find(params[:id])
+    #@article = Article.find(params[:id])
     @paht = 'public/uploads/article/linktowork/' + @article.id.to_s + '/' + @article.linktowork.to_s[@article.linktowork.to_s.rindex("/")+1..-1]
     @ext = @article.linktowork.to_s[@article.linktowork.to_s.rindex(".")..-1] 
     case @ext
@@ -30,7 +33,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   def edit
-    @article = Article.find(params[:id])
+    #@article = Article.find(params[:id])
   end
   def upload 
     uploaded_io = params[:linktowork]
@@ -52,7 +55,7 @@ class ArticlesController < ApplicationController
     end
   end
   def update
-    @article = Article.find(params[:id])
+    #@article = Article.find(params[:id])
 
     if @article.update(article_params)
       create_txt
@@ -65,7 +68,7 @@ class ArticlesController < ApplicationController
     end
   end
   def destroy
-    @article = Article.find(params[:id])
+    #@article = Article.find(params[:id])
     @article.destroy
 
     redirect_to articles_path
@@ -74,6 +77,12 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:fio, :group, :tnumber, :email, :sn, :typework, :year, :teacher, :workname, :mark, :linktowork, :student_id)
     end
+
+    def find_article
+      @article = Article.find(params[:id])
+    end
+
+
     def create_txt
       require 'docx'
       @ext = @article.linktowork.to_s[@article.linktowork.to_s.rindex(".")..-1] 
