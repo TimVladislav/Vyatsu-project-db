@@ -8,7 +8,7 @@ body,
     background-color: #000222 !important;
 }
 .point {
-    position: relative;
+  position: relative;
   height: 100%;
   text-align: center;
   &:link {
@@ -16,6 +16,7 @@ body,
   }
   &:hover {
     background: linear-gradient(135deg, #5100a8 0%,#ff0084 100%);
+    transition: all 1s ease-in-out;
   }
   .title {
       position: relative;

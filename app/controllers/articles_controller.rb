@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
+  layout 'application'
   http_basic_authenticate_with name: "admin", password: "229250", except: [:show]
-  
+
   before_action :find_article, only: [:show, :edit, :update, :destroy]
 
   def index
