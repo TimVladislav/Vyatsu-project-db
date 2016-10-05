@@ -1,2 +1,33 @@
-<h1>Guidelines#index</h1>
-<p>Find me in app/views/guidelines/index.html.erb</p>
+<h1>Методические материалы</h1>
+
+<table id="guideTable" class="table table-striped table-bordered tablesorter responsive">
+  <thead>
+  <tr>
+    <th>Название</th>
+    <th>Автор</th>
+    <th>Предмет</th>
+    <th><%= link_to 'Add', new_guideline_path %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @guides.each do |guide|%>
+    <tr>
+      <td><%= guide.name %></td>
+      <td><%= guide.author %></td>
+      <td><%= guide.subject %></td>
+      <td>
+        <%= link_to 'Show', guideline_path(guide) %>
+        <%= link_to 'Edit', edit_guideline_path(guide) %>
+        <%= link_to 'Delete', guideline_path(guide), method: :delete, data: {confirm: 'Вы уверены, что хотите удалить строку?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    //$("#articleTable").tablesorter({sortList: [[0,0],[1,0]]});
+    $("#guideTable").dataTable();
+  });
+</script>

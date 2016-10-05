@@ -10,7 +10,16 @@
 @import "teachers.scss";
 @import "dataTables/extras/dataTables.responsive";
 @import "start_page.scss";
+@import "guidelines.scss";
 
 h1{
   margin-top: 60px;
+}
+
+#articleTable_filter>label {
+  float: right;
+  margin-right:100px;
+}
+#articleTable_length>label {
+  margin-left: 100px;
 }

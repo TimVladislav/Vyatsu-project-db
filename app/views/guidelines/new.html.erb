@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Новая методичка:</h1>
+  <%= form_for :guide, url: guidelines_path do |f| %>
+    <%= render 'form' %>
+    <div class="form-group">
+      <input type="submit" name="commit" value="Save guide" class="form-control btn-success">
+    </div>
+  <% end %>
+</div>

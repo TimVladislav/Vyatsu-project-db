@@ -1,0 +1,20 @@
+<br>
+<div class="container">
+  <h1>Информация о методичке</h1>
+  <dl class="dl-horizontal">
+    <dt>Название:</dt>
+    <dd><%= @guide.name %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Автор:</dt>
+    <dd><%= @guide.author%></dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt>Предмет:</dt>
+    <dd><%= @guide.subject %></dd>
+  </dl>
+
+<%= link_to 'Вернуться к базе данных', guidelines_path %>
+
+</div>
+<br>
