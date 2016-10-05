@@ -13,6 +13,11 @@
     <dt>Предмет:</dt>
     <dd><%= @guide.subject %></dd>
   </dl>
+  <dl class="dl-horizontal">
+    <dt>Ссылка на методичку:</dt>
+    <dd><a href="<%= @guide.doc %>" download> Скачать </dd>
+  </dl>
+
 
 <%= link_to 'Вернуться к базе данных', guidelines_path %>
 

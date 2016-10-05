@@ -6,6 +6,7 @@
     <th>Название</th>
     <th>Автор</th>
     <th>Предмет</th>
+    <th>Ссылка на методичку</th>
     <th><%= link_to 'Add', new_guideline_path %></th>
   </tr>
   </thead>
@@ -15,6 +16,7 @@
       <td><%= guide.name %></td>
       <td><%= guide.author %></td>
       <td><%= guide.subject %></td>
+      <td><a href="<%= guide.doc %>" download> Скачать </td>
       <td>
         <%= link_to 'Show', guideline_path(guide) %>
         <%= link_to 'Edit', edit_guideline_path(guide) %>
